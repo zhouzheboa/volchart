@@ -8,7 +8,7 @@
 	background-color: #ccc;
 }
 .ui-tag-cloud > .ui-person-head{
-	width: 400px;
+	width: 400px; 
     height: 460px;
     border-radius: 200px;
     position: relative;
@@ -29,27 +29,26 @@
 	margin: 185px -25px 0 0;
 	right: 0px;
 }
+.ui-tag-cloud > .ui-person-head > .ui-person-tag{
+	width: 400px;
+	height: 400px;
+	padding: 30px;
+	border-radius: 200px;
+	overflow: hidden;
+}
 .ui-tag-cloud > .ui-person-body{
 	width: 600px;
 	margin: -30px auto 0;
 	height: 200px; 
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+    overflow: hidden;
+    padding: 25px 25px 0 25px;
 }
 .ui-tag-cloud span{
-	display: inline-block;
 	position: absolute;
 	overflow: hidden;
-	min-height: 20px;
+	line-height: 1.2;
+	z-index: 12;
 }
 
-
-
-
-
-
-
-
-
-
-    
