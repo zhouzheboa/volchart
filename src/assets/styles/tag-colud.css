@@ -1,0 +1,55 @@
+.ui-tag-cloud{
+	width: 700px;
+	overflow: hidden;
+	position: relative;
+	margin: 100px auto;
+}
+.ui-tag-cloud > div{
+	background-color: #ccc;
+}
+.ui-tag-cloud > .ui-person-head{
+	width: 400px;
+    height: 460px;
+    border-radius: 200px;
+    position: relative;
+    z-index: 11;
+    margin: 0 auto;
+}
+.ui-tag-cloud > .ui-person-head > .ui-person-ear{
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	background-color: #ccc;
+	position: absolute;
+}
+.ui-tag-cloud > .ui-person-head > .ui-person-ear.fleft{
+	margin: 185px 0 0 -25px;
+}
+.ui-tag-cloud > .ui-person-head > .ui-person-ear.fright{
+	margin: 185px -25px 0 0;
+	right: 0px;
+}
+.ui-tag-cloud > .ui-person-body{
+	width: 600px;
+	margin: -30px auto 0;
+	height: 200px; 
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.ui-tag-cloud span{
+	display: inline-block;
+	position: absolute;
+	overflow: hidden;
+	min-height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+    
