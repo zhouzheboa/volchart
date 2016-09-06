@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="./assets/styles/base.css" />
 <link rel="stylesheet" href="./assets/styles/jQueryUI/jquery-ui.min.css" />
 <link rel="stylesheet" href="./assets/styles/tag-colud.css" />
+<link rel="stylesheet" href="./assets/styles/animate.css" />
 
 <script src="./assets/scripts/jQuery/jquery-1.12.4.js"></script>
 <script src="./assets/scripts/jQuery/jqcloud-1.0.4.js"></script>
@@ -143,13 +144,13 @@ var data2 = [  {text: "未知", weight: 1},
         {text: "宁夏", weight: 1}
  ];
 var word_list1 = [
-        {text: "Lorem", weight: 13},
+        {text: "Lorem", weight: 13, html: {"class": "vertical"}},
         {text: "Ipsum", weight: 10.5, html: {"class": "vertical"}},
-        {text: "Dolor", weight: 9.4},
+        {text: "Dolor", weight: 9.4, html: {"class": "vertical"}},
         {text: "Sit", weight: 8, html: {"class": "vertical"}},
         {text: "Amet", weight: 6.2},
         {text: "Consectetur", weight: 5},
-        {text: "Adipiscing", weight: 5, html: {"class": "vertical"}},
+        {text: "Adipiscing", weight: 5},
         {text: "Elit", weight: 5},
         {text: "Nam et", weight: 5},
         {text: "Leo", weight: 4, html: {"class": "vertical"}},
@@ -159,7 +160,7 @@ var word_list1 = [
         {text: "morbi", weight: 3},
         {text: "tristisque", weight: 3, html: {"class": "vertical"}},
         {text: "senectus", weight: 3},
-        {text: "et netus", weight: 3},
+        {text: "et netus", weight: 3, html: {"class": "vertical"}},
         {text: "et malesuada", weight: 3, html: {"class": "vertical"}},
         {text: "fames", weight: 2},
         {text: "ac turpis", weight: 2},
@@ -180,7 +181,16 @@ var word_list1 = [
         {text: "Curabitur", weight: 1},
         {text: "diam", weight: 1, html: {"class": "vertical"}},
         {text: "metus", weight: 1},
+        {text: "metus", weight: 1, html: {"class": "vertical"}},
         {text: "metus", weight: 1},
+        {text: "metus", weight: 7, html: {"class": "vertical"}},
+        {text: "metus", weight: 6},
+        {text: "metus", weight: 5},
+        {text: "metus", weight: 1},
+        {text: "metus", weight: 1, html: {"class": "vertical"}},
+        {text: "metus", weight: 8},
+        {text: "metus", weight: 1},
+        {text: "metus", weight: 1, html: {"class": "vertical"}},
         {text: "metus", weight: 1},
         {text: "at molestie", weight: 1},
         {text: "purus", weight: 1, html: {"class": "vertical"}},
@@ -245,20 +255,24 @@ var word_list1 = [
 	$(function() {
 		$("#my_favorite_latin_words").jQCloud(word_list,{
 			rotate:true,
+			animateClass:"zoomInDown",
 			colorArr : ["#0099FF","#Fe00Fe","#FF0000" ,"#Fa00aF"," #FFFF33","#6600FF","#006666"," #00FFFF","#7FFFD4","#6600ee"]
 		});
 		$("#rectangular").jQCloud(word_list1,{
 			colorArr : ["#0099FF","#Fe00Fe","#FF0000" ,"#Fa00aF"," #FFFF33","#6600FF","#006666"," #00FFFF","#7FFFD4","#6600ee"],
 			shape: "rectangular",
 			rotate:false,
+			animateClass:"bounceInDown",
 		});
 		$(".ui-person-ear.fleft").jQCloud(data2,{
 			colorArr : ["#0099FF","#Fe00Fe","#FF0000" ,"#Fa00aF"," #FFFF33","#6600FF","#006666"," #00FFFF","#7FFFD4","#6600ee"],
 			rotate:false,
+			animateClass:"bounceInDown",
 		});
 		$(".ui-person-ear.fright").jQCloud(data2,{
 			colorArr : ["#0099FF","#Fe00Fe","#FF0000" ,"#Fa00aF"," #FFFF33","#6600FF","#006666"," #00FFFF","#7FFFD4","#6600ee"],
 			rotate:false,
+			animateClass:"bounceInDown",
 		});
 	});
 	var string_list = string_;

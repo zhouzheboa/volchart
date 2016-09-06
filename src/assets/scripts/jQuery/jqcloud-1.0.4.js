@@ -5,7 +5,6 @@
 		var $this = this;
 		// 都已ID命名 避免多个标签之间的碰撞
 		var cloud_namespace = $this.attr('id') || Math.floor((Math.random() * 1000000)).toString(36);
-
 		// 默认选项值
 		var default_options = {
 			width: $this.width(),
@@ -19,6 +18,7 @@
 			delayedMode: word_array.length > 50,
 			shape: false, // 默认为椭圆形状
 			encodeURI: true,
+			animateClass:"bounceInDown",
 			removeOverflowing: true
 		};
 
@@ -109,24 +109,7 @@
 					weight = Math.round((word.weight - word_array[word_array.length - 1].weight) /
 						(word_array[0].weight - word_array[word_array.length - 1].weight) * (options.colorArr.length-1)) + 1;
 				}
-//				var tadWidth = "auto"
-//				var rotateNum ="0";
-//				if(weight<3){
-//					rotateNum = 25;
-//				}else if(weight > 8){
-//					tadWidth = "45px"
-//				}else if(weight>=5 && weight <= 8){
-////					rotateNum = ;
-//				}
-				word_span = $('<span>').attr(word.html).addClass('w' + weight + " " + custom_class).css({"color":options.colorArr[weight-1]});
-//						"color":options.colorArr[weight-1],
-//						"width":tadWidth,
-//						"transform":"rotate("+rotateNum+"deg)",
-//						"-ms-transform":"rotate("+rotateNum+"deg)", 	/* IE 9 */
-//						"-moz-transform":"rotate("+rotateNum+"deg)", 	/* Firefox */
-//						"-webkit-transform":"rotate("+rotateNum+"deg)",/* Safari 和 Chrome */
-//						"-o-transform":"rotate("+rotateNum+"deg)"
-//				});
+				word_span = $('<span>').attr(word.html).addClass('w' + weight + " " + custom_class ).css({"color":options.colorArr[Math.ceil(Math.random()*options.colorArr.length)]}).addClass(options.animateClass+" animated");
 
 				// 如果单词添加链接。url属性设置
 				if (word.link) {
@@ -212,30 +195,25 @@
 					}
 					word_style.left = left + "px";
 					word_style.top = top + "px";
-					if(options.shape != "rectangular" && options.rotate){
-						var rotateNum ="0";
-//						var tadWidth = "auto"
-//						if(weight > 8){
-//							tadWidth = "45px"
+//					if(options.shape != "rectangular" && options.rotate){
+//						var rotateNum ="0";
+//						if(left < ($this.width()/6) && top <$this.height()/3 ){
+//							rotateNum = 325;
+//						}else if(left < ($this.width()/8) && top > ($this.height()-$this.height()/3) ){
+//							rotateNum = 40;
+//						}else if( left > ($this.width() - ($this.width()/6)) && top < ($this.height()/3) ){
+//							rotateNum = 25;
+//						}else if( left > ($this.width() - ($this.width()/6)) && top > ($this.height()-$this.height()/3) ){
+//							rotateNum = -60;
 //						}
-						if(left < ($this.width()/6) && top <$this.height()/3 ){debugger
-							rotateNum = 325;
-						}else if(left < ($this.width()/8) && top > ($this.height()-$this.height()/3) ){debugger
-							rotateNum = 40;
-						}else if( left > ($this.width() - ($this.width()/6)) && top < ($this.height()/3) ){
-							rotateNum = 25;
-						}else if( left > ($this.width() - ($this.width()/6)) && top > ($this.height()-$this.height()/3) ){
-							rotateNum = -60;
-						}
-						word_span.css({
-//							"width":tadWidth,
-							"transform":"rotate("+rotateNum+"deg)",
-							"-ms-transform":"rotate("+rotateNum+"deg)", 	/* IE 9 */
-							"-moz-transform":"rotate("+rotateNum+"deg)", 	/* Firefox */
-							"-webkit-transform":"rotate("+rotateNum+"deg)",/* Safari 和 Chrome */
-							"-o-transform":"rotate("+rotateNum+"deg)"
-						});
-					}
+//						word_span.css({
+//							"transform":"rotate("+rotateNum+"deg)",
+//							"-ms-transform":"rotate("+rotateNum+"deg)", 	
+//							"-moz-transform":"rotate("+rotateNum+"deg)", 	
+//							"-webkit-transform":"rotate("+rotateNum+"deg)",
+//							"-o-transform":"rotate("+	rotateNum+"deg)"
+//						});
+//					}
 				}
 
 				// 不呈现词如果外面将容器的一部分
