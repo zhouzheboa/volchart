@@ -8,41 +8,313 @@
 <link rel="stylesheet" href="./assets/styles/tag-colud.css" />
 
 <script src="./assets/scripts/jQuery/jquery-1.12.4.js"></script>
+<script src="./assets/scripts/jQuery/jqcloud-1.0.4.js"></script>
 <script src="./assets/scripts/jQuery/jQueryUI/jquery-ui.min.js"></script> 
     <script type="text/javascript">
-    		$(function(){
-    			var circle = getCy();
-    			var hotNumber = ["1","5","8","10","15",'30','20','30','22','12','50','40','48','36','35','26', '23','28','41', '36'];
-    			var colorArr = ["#0099FF","#Fe00Fe","#FF0000" ,"#Fa00aF"," #FFFF33","#6600FF","#006666"," #00FFFF","#7FFFD4","#6600ee"];
-    			var strArr = ["百度","Volvo","BMW","福特","尼桑",'互联网','爱好','性别','大数据','流量套餐','VIP客户等级','智能手机类型','生效日期','基本套餐','智能手机类型','合约用户',   '停机用户（日）','开户所在县市','客户归属地', '基本月租费(月)'];
-    			var colorIndex = 0;
-    			for(var i=0,len = strArr.length;i<len;i++){
-	    			var font = Math.floor(hotNumber[i]*1/10)*12 >= 12 ? Math.floor(hotNumber[i]*1/10)*12 : 12;
-	    			var width ="auto";
-	    			var display = "inline";
-	    			if(font>20&&font<30){
-	    				width = 25+"px";
-	    			}else if(font > 45){
-	    				display = "inline-block";
-	    			}
-	    			colorIndex = colorIndex > 10? 0 : colorIndex;
-	    			colorIndex ++;
-	    			var color = colorArr[colorIndex];
-    				var html = '<span style="font-size:'+font+'px;width:'+width+';color:'+color+';display:'+display+';">'+strArr[i]+'</span>';
-    				if(i%2 == 0){
-    					$(".ui-person-tag").append(html);
-    				}else{
-    					$(".ui-person-body").append(html);
-    				}
-    			}
-    		});
-    		function getCy(){
-    			var r = $(".ui-person-head").width()/2;
-    			var x = $(".ui-person-head").offset().left + $(".ui-person-head").width()/2;
-    			var y = $(".ui-person-head").offset().top + $(".ui-person-head").height()/2;
-    			var s = Math.PI * r * r;
-    			return {"x":x,"y":y,"r":r,"s":s};
-    		}
+//     		$(function(){
+//     			var circle = getCy();
+//     			var hotNumber = ["1","5","8","10","15",'30','20','30','22','12','50','40','48','36','35','26', '23','28','41', '36'];
+//     			var colorArr = ["#0099FF","#Fe00Fe","#FF0000" ,"#Fa00aF"," #FFFF33","#6600FF","#006666"," #00FFFF","#7FFFD4","#6600ee"];
+//     			var strArr = ["百度","Volvo","BMW","福特","尼桑",'互联网','爱好','性别','大数据','流量套餐','VIP客户等级','智能手机类型','生效日期','基本套餐','智能手机类型','合约用户',   '停机用户（日）','开户所在县市','客户归属地', '基本月租费(月)'];
+//     			var colorIndex = 0;
+//     			for(var i=0,len = strArr.length;i<len;i++){
+// 	    			var font = Math.floor(hotNumber[i]*1/10)*12 >= 12 ? Math.floor(hotNumber[i]*1/10)*12 : 12;
+// 	    			var width ="auto";
+// 	    			if(font>20&&font<30){
+// 	    				width = 25+"px";
+// 	    			} 
+// 	    			colorIndex = colorIndex > 9 ? 0 : colorIndex;
+// 	    			colorIndex ++;
+// 	    			var color = colorArr[colorIndex];
+//     				var $html = $('<span style="font-size:'+font+'px;width:'+width+';color:'+color+';">'+strArr[i]+'</span>');
+//     				var x =  0;
+//     				var y = 0;
+//     				if(i%2 == 0){
+//     					$(".ui-person-tag").append($html);
+// 	    				var spanList = $(".ui-person-tag  span");
+// 	    				if(spanList.length > 0){
+// 		    				for(var j=0,leng = spanList.length; j < leng ; j++){
+// 		    					console.log(spanList[j]);
+// 		    					x += $(spanList[j]).offset().left + $(spanList[j]).width();
+// 		    					if(x > 400){
+// 		    						x = 0;
+// 		    					}
+// 		    				}
+// 	    				}
+// 	    				$html.css({
+// 	    					left :x
+// 	    				});
+//     				}else{
+//     					$(".ui-person-body").append($html);
+//     				}
+//     			}
+//     		});
+//     		function getCy(){
+//     			var r = $(".ui-person-head").width()/2;
+//     			var x = $(".ui-person-head").offset().left + $(".ui-person-head").width()/2;
+//     			var y = $(".ui-person-head").offset().top + $(".ui-person-head").height()/2;
+//     			var s = Math.PI * r * r;
+//     			return {"x":x,"y":y,"r":r,"s":s};
+//     		}
+var data = [
+		['广州', 13, 100],
+		['浙江', 10, 123],
+		['浙送我', 10, 123],
+		['浙江撒', 11, 123],
+		['江苏', 9, 222],
+		['北京', 8, 111],
+		['上海', 7, 111],
+		['河南', 6, 111],
+		['河北', 5, 111],
+		['四川', 5, 111],
+		['安徽', 5, 111],
+		['湖北', 5, 111],
+		['福建', 4, 111],
+		['辽宁', 4, 333],
+		['湖南', 3, 111],
+		['陕西', 3, 111],
+		['广西', 3, 111],
+		['江西', 3, 444],
+		['重庆', 3, 111],
+		['天津', 3, 111],
+		['云南', 6, 111],
+		['山西', 5, 111],
+		['黑龙江', 7, 111],
+		['吉林', 2, 111],
+		['内蒙古', 2, 111],
+		['贵州', 9, 111],
+		['甘肃', 2, 111],
+		['海南', 2, 111],
+		['宁夏', 10, 111],
+		['宁夏', 2, 111],
+		['宁夏', 13, 111],
+		['上海', 7, 111],
+		['河南', 6, 111],
+		['河北', 5, 111],
+		['四川', 5, 111],
+		['安徽', 5, 111],
+		['湖北', 5, 111],
+		['福建', 4, 111],
+		['辽宁', 4, 111],
+		['湖南', 3, 111],
+		['陕西', 3, 111],
+		['广西', 3, 111],
+		['江西', 3, 111],
+		['重庆', 3, 111],
+		['天津', 3, 111],
+		['云南', 2, 111],
+		['山西', 2, 111],
+		['黑龙江', 2, 111],
+		['吉林', 2, 111],
+		['内蒙古', 2, 111],
+		['贵州', 2, 111],
+		['甘肃', 2, 111],
+		['海南', 2, 111],
+		['宁夏', 2, 111],
+		['宁夏', 2, 111],
+		['宁夏', 2, 111],
+		['上海', 7, 111],
+		['河南', 6, 111],
+		['河北', 5, 111],
+		['四川', 5, 111],
+		['安徽', 5, 111],
+		['湖北', 5, 111],
+		['福建', 4, 111],
+		['辽宁', 4, 111],
+		['湖南', 3, 111],
+		['陕西', 3, 111],
+		['广西', 3, 111],
+		['江西', 3, 111],
+		['重庆', 3, 111],
+		['天津', 3, 111],
+		['云南', 2, 111],
+		['山西', 2, 111],
+		['黑龙江', 2, 111],
+		['吉林', 2, 111],
+		['内蒙古', 2, 111],
+		['贵州', 2, 111],
+		['甘肃', 2, 111],
+		['海南', 2, 111],
+		['宁夏', 2, 111],
+		['宁夏', 2, 111],
+		['宁夏', 2, 111],
+		['上海', 7, 111],
+		['河南', 6, 111],
+		['河北', 5, 111],
+		['宁夏', 2, 111],
+		['宁夏', 2, 111],
+		['宁夏', 2, 111],
+		['上海', 7, 111],
+		['河南', 6, 111],
+		['河北', 5, 111],
+		['四川', 5, 111],
+		['安徽', 5, 111],
+		['湖北', 5, 111],
+		['福建', 4, 111],
+		['辽宁', 4, 111],
+		['湖南', 3, 111],
+		['陕西', 3, 111],
+		['广西', 3, 111],
+		['江西', 3, 111],
+		['重庆', 3, 111],
+		['天津', 3, 111],
+		['云南', 2, 111],
+		['山西', 2, 111],
+		['黑龙江', 2, 111],
+		['吉林', 2, 111],
+		['内蒙古', 2, 111],
+		['贵州', 2, 111],
+		['甘肃', 2, 111],
+		['海南', 2, 111],
+		['宁夏', 2, 111],
+		['宁夏', 2, 111],
+		['宁夏', 2, 111],
+		['宁夏', 2, 111],
+		['宁夏', 2, 111],
+		['宁23', 2, 111],
+		['32424', 8, 111],
+		['百度', 6, 111],
+		['腾讯', 9, 111],
+		['青海', 1, 111],
+		['西藏', 1, 111],
+		['香港', 3, 111],
+		['未知', 12, 111],
+		['台湾', 1, 111]
+	];
+	
+var data1 = [
+		['广州', 13, 100],
+		['江苏', 9, 222],
+		['北京', 8, 111],
+		['上海', 7, 111],
+		['河南', 6, 111],
+		['河北', 5, 111],
+		['四川', 5, 111],
+		['安徽', 5, 111],
+		['湖北', 5, 111],
+		['福建', 4, 111],
+		['辽宁', 4, 333],
+		['湖南', 3, 111],
+		['陕西', 4, 111],
+		['广西', 6, 111],
+		['江西', 7, 444],
+		['重庆', 3, 111],
+		['天津', 6, 111],
+		['云南', 6, 111],
+		['山西', 5, 111],
+		['黑龙江', 7, 111],
+		['吉林', 2, 111],
+		['内蒙古', 2, 111],
+		['贵州', 9, 111],
+		['甘肃', 6, 111],
+		['海南', 7, 111],
+		['宁夏', 3, 111],
+		['浙江', 10, 123],
+		['江苏', 9, 222],
+		['北京', 7, 111],
+		['河南', 6, 111],
+		['河北', 7, 111],
+		['辽宁', 7, 333],
+		['湖南', 3, 111],
+		['重庆', 3, 111],
+		['天津', 3, 111],
+		['云南', 6, 111],
+		['山西', 7, 111],
+		['黑龙江', 7, 111],
+		['吉林', 2, 111],
+		['内蒙古', 2, 111],
+		['贵州', 4, 111],
+		['甘肃', 2, 111],
+		['海南', 2, 111],
+		['宁夏', 2, 111],
+		['河南', 6, 111],
+		['河北', 5, 111],
+		['四川', 5, 111],
+		['安徽', 5, 111],
+		['湖北', 5, 111],
+		['福建', 4, 111],
+		['辽宁', 4, 111],
+		['湖南', 5, 111],
+		['陕西', 8, 111],
+		['广西', 7, 111],
+		['海南', 6, 111],
+		['宁夏', 7, 111],
+		['贵州', 5, 111],
+		['甘肃', 2, 111],
+		['海南', 2, 111],
+		['河北', 7, 111],
+		['宁夏', 2, 111],
+		['河南', 6, 111],
+		['河北', 5, 111],
+		['四川', 5, 111],
+		['安徽', 5, 111],
+		['湖北', 5, 111],
+		['福建', 4, 111],
+		['辽宁', 4, 111],
+		['湖南', 3, 111],
+		['陕西', 3, 111],
+		['重庆', 3, 111],
+		['天津', 3, 111],
+		['云南', 2, 111],
+		['山西', 2, 111],
+		['吉林', 2, 111],
+		['贵州', 2, 111],
+		['甘肃', 2, 111],
+		['海南', 2, 111],
+		['宁夏', 2, 111],
+		['宁23', 2, 111],
+		['宁23', 2, 111],
+		['青海', 1, 111],
+		['青海', 1, 111],
+		['青海',6, 111],
+		['西藏', 1, 111],
+		['香港', 3, 111],
+		['台湾', 1, 111]
+	];
+	
+	var string_ = "";
+	for (var i = 0; i < data.length; i++) {
+		var string_f = data[i][0];
+		var string_n = data[i][1];
+		string_ += "{text: '" + string_f + "', weight: '" + string_n + "',html: {'class': 'span_list',onmouseover:'on_mouseover(this,event)',onmouseout:'on_mouseout()'}},";
+	}
+	var string_1 = "";
+	for (var i = 0; i < data1.length; i++) {
+		var string_f = data1[i][0];
+		var string_n = data1[i][1];
+		string_1 += "{text: '" + string_f + "', weight: '" + string_n + "',html: {'class': 'span_list',onmouseover:'on_mouseover(this,event)',onmouseout:'on_mouseout()'}},";
+	}
+
+	function on_mouseover(e, ev) {
+		var txt = $(e).html();
+		ev = ev || event;
+		var html =  "";
+		$.each(data, function(i, item) {
+			if(txt == item[0]){
+				html = item[0]+"<br />曝光数"+item[1]+"<br />"+item[2];
+				return;
+			}
+		});
+		$(".append_div").remove();
+		$(".ui-tag-cloud").after("<div class='append_div' style='left:" + ev.clientX + "px; top:" + ev.clientY + "px; '>" + html + "</div>");
+	}
+	$(function() {
+		$("#my_favorite_latin_words").jQCloud(word_list,{
+			colorArr : ["#0099FF","#Fe00Fe","#FF0000" ,"#Fa00aF"," #FFFF33","#6600FF","#006666"," #00FFFF","#7FFFD4","#6600ee"]
+		});
+		$("#rectangular").jQCloud(word_list1,{
+			colorArr : ["#0099FF","#Fe00Fe","#FF0000" ,"#Fa00aF"," #FFFF33","#6600FF","#006666"," #00FFFF","#7FFFD4","#6600ee"],
+			shape: "rectangular"
+		});
+	});
+	var string_list = string_;
+	var string_list1 = string_1;
+	var word_list = eval("[" + string_list + "]");
+	var word_list1 = eval("[" + string_list1 + "]");
+
+	function on_mouseout() {
+		$(".append_div").remove();
+	}
     </script>
 </head>
 <body>
@@ -50,9 +322,9 @@
 		<div class="ui-person-head">
 			<div class="ui-person-ear fleft"></div>
 			<div class="ui-person-ear fright"></div>
-			<div class="ui-person-tag"></div>
+			<div class="ui-person-tag" id="my_favorite_latin_words"></div>
 		</div>
-		<div class="ui-person-body"></div>
+		<div class="ui-person-body" id="rectangular"></div>
 	</div>
 </body>
 </html>
