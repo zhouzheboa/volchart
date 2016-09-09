@@ -136,7 +136,7 @@ html,body{
 .ui-tag-cloud>.ui-person-head>.ui-person-tag {
 	width: 230px;
 	height: 460px;
-	padding: 30px;
+	padding: 0 30px;
 	margin:0 auto;
 	border-radius: 200px;
 	overflow: hidden;
