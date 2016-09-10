@@ -70,9 +70,9 @@
 				}
 			});
 
-			var step = (options.shape === "rectangular") ? 18.0 : 2.0,
+			var step = (options.shape === "rectangular") ? 3.5 : 2.0,
 				already_placed_words = [],
-				aspect_ratio = options.width / options.height;
+				aspect_ratio = options.width / options.height; //容器宽度和高度的比例
 
 			// 函数画一词,在螺旋通过移动它,直到找到一个合适的空地方。这将是迭代每个单词。
 			var drawOneWord = function(index, word) {
@@ -164,6 +164,9 @@
 							quarter_turns++;
 						}
 						switch (quarter_turns % 4) {
+							case 0:
+								top += step + Math.random() * 2.0;
+								break;
 							case 1:
 								left += step * aspect_ratio + Math.random() * 2.0;
 								break;
@@ -172,9 +175,6 @@
 								break;
 							case 3:
 								left -= step * aspect_ratio + Math.random() * 2.0;
-								break;
-							case 0:
-								top += step + Math.random() * 2.0;
 								break;
 						}
 //						var tadWidth = "auto"
