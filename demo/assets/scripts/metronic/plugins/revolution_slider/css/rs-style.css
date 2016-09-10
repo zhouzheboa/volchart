@@ -79,14 +79,31 @@ version:   	1.0
 .fontSizeColor40{
 	font-size: 40px;
 	color: #94d7e4;
+	word-break:break-all !important; /*支持IE，chrome，FF不支持*/
+	word-wrap:break-word !important;/*支持IE，chrome，FF*/
+	width: 100%;
+	line-height: 44px !important;
+	white-space: normal !important;
 }
 .fontSizeColor18{
 	font-size: 28px;
 	color: #fff;
+	word-break:break-all !important; /*支持IE，chrome，FF不支持*/
+	word-wrap:break-word !important;/*支持IE，chrome，FF*/
+	width: 100%;
+	line-height: 32px !important;
+	white-space: normal !important;
 }
 .fontSizeColor16{
 	font-size: 18px !important;
 	color: #95a3a6 !important;
+	font-size: 28px;
+	color: #fff;
+	word-break:break-all !important; /*支持IE，chrome，FF不支持*/
+	word-wrap:break-word !important;/*支持IE，chrome，FF*/
+	width: 100%;
+	line-height: 24px !important;
+	white-space: normal !important;
 }
 
 
