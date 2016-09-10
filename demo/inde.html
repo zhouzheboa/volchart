@@ -8,7 +8,11 @@
     <title>AIChart</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
    <link rel="stylesheet" href="assets/scripts/metronic/plugins/revolution_slider/css/rs-style.css" media="screen">
-   <link rel="stylesheet" href="assets/scripts/metronic/plugins/revolution_slider/rs-plugin/css/settings.css" media="screen">              
+   <link rel="stylesheet" href="assets/scripts/metronic/plugins/revolution_slider/rs-plugin/css/settings.css" media="screen"> 
+   	<link rel="stylesheet" href="assets/styles/animate.css" />
+	<link rel="stylesheet" href="assets/styles/tag-colud.css" />
+	<link rel="stylesheet" href="assets/styles/base.css" />
+	<link rel="stylesheet" href="assets/styles/labelCloud.css" />            
    <!-- END PAGE LEVEL PLUGIN STYLES -->
 
 
@@ -32,11 +36,40 @@
                                  data-x="35" 
                                  data-y="65" 
                                  data-speed="500" 
-                                 data-start="5500" 
+                                 data-start="100" 
                                  data-easing="easeOutBack">
                                  <div class="ui-person-box">
                                  
                                  
+                                 <select class="form-select-control">
+							    	<option value="1" > 地理标签</option>
+							    	<option value="2" > 客户画像标签</option>
+							    </select>
+								<div class="labelCloudBody"  id="labelCloudBody" ></div>
+								<div class="headPortrait" id="headPortrait"></div>
+							    <div class="ui-tag-cloud">
+									<div class="ui-person-head">
+										<div class="ui-person-ear fleft" id="leftEar"></div>
+										<div class="ui-person-ear fright"  id="rightEar"></div>
+										<div class="ui-person-tag" id="face"></div>
+									</div>
+									<div class="ui-person-neck" id="neck"></div>
+									<div class="ui-person-body" id="chest" ></div>
+									<div class="detailTip" id="detailTip" ></div>
+									
+								</div>
+							
+							    <!-- 团队信息 -->
+								<ol class="teamInfo" id="teamInfo">
+									<li class="one animated.bounceIn"></li>
+									<li class="two"></li>
+									<li class="three">
+										<dl>
+											<dt></dt>
+											<dd></dd>
+										</dl>
+									</li>
+								</ol>
                                  
                                  
                                  
@@ -149,6 +182,9 @@
             Index.initRevolutionSlider();                    
         });
     </script>
+	<script src="../src/jqcloud-0.1.1.js"></script>
+	<script src="assets/scripts/pages/labelCloudData.js"></script>
+	<script src="assets/scripts/pages/labelCloud.js"></script>
 </body>
 <!-- END BODY -->
 </html>

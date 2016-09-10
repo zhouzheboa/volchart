@@ -192,9 +192,20 @@ html,body{
 /*   overflow: hidden; */
 }
 
+.detailTip  {
+  position: fixed;
+  z-index: 20;
+  width: 80px;
+  padding:5px 10px;
+  font-size: 14px;
+  text-align: left;
+  color: #FFF;
+  border-radius: 5px;
+  background: #000;
+  line-height: 20px;
+  opacity: 0.8;
+}
 
-
-/* 鑷畾涔夊姩鐢绘晥鏋�*/
 @-webkit-keyframes flyInLeft {
   from, 60%, 75%, 90%, to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);

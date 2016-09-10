@@ -73,26 +73,18 @@ function joinJsonData(dataArr){
 	var dataItem;
 	for (var i = 0 ,len =dataArr.length; i < len; i++) {
 		 dataItem = dataArr[i];
-		jsonObjArr.push("{text: '" + dataItem[0] + "', weight: '" + dataItem[1] + "',html: {'class': 'span_list',onmouseover:'on_mouseover(this,event)',onmouseout:'on_mouseout()'}}");
+		jsonObjArr.push("{text: '" + dataItem[0] + "', weight: '" + dataItem[1] + "',html: {'class': 'span_list',onmouseover:'on_mouseover(event , \""+dataItem[0]+"\",\""+dataItem[1]+"\",\""+dataItem[2]+"\")',onmouseout:'on_mouseout()'}}");
 	}
 	return eval("[" + jsonObjArr.join(",") + "]");
 }
 
 //鼠标mouseover 操作
- function on_mouseover(e, ev) {
-		var txt = $(e).html();
+ function on_mouseover(ev , param1, param2 , param3) {
 		ev = ev || event;
-		var html =  "";
-		$.each(data, function(i, item) {
-			if(txt == item[0]){
-				html = item[0]+"<br />曝光数"+item[1]+"<br />"+item[2];
-				return;
-			}
-		});
-		$(".append_div").remove();
-		$(".ui-tag-cloud").after("<div class='append_div' style='left:" + ev.clientX + "px; top:" + ev.clientY + "px; '>" + html + "</div>");
+		var temp =  param1 +"<br /> 曝光数 : "+param2+"<br />"+param3;
+		$("#detailTip").css({"left": ev.clientX , "top": ev.clientY}).html(temp).show();
 }
 //鼠标mouseout 操作
 function on_mouseout() {
-	$(".append_div").remove();
+	$("#detailTip").hide();
 }
