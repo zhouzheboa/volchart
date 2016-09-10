@@ -669,6 +669,7 @@ website:   	http://www.themepunch.com
 	list-stye:none;
 	position:absolute;
 	visibility:hidden;
+	width: 100%;
 }
 /*  CAPTION SLIDELINK   **/
 .caption.slidelink a div,
