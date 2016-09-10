@@ -10,9 +10,10 @@
 	<link rel="stylesheet" href="assets/styles/labelCloud.css" />
 </head>
 <body>
-    <select class="form-select-control">
-    	<option value="1" > 地理标签</option>
-    	<option value="2" > 客户画像标签</option>
+    <select class="form-select-control" id="labelSelect">
+    	<option value="1" > 最新标签</option>
+    	<option value="2" > 当月热门标签</option>
+    	<option value="3" > 随机标签</option>
     </select>
 	<div class="labelCloudBody"  id="labelCloudBody" ></div>
 	<div class="headPortrait" id="headPortrait"></div>
@@ -41,7 +42,7 @@
 	</ol>
 
 	<script src="assets/scripts/jQuery/jquery-1.12.4.js"  ></script>
-	<script src="assets/scripts/jQuery/jqcloud-1.0.4.js"></script>
+	<script src="../src/jqcloud-0.1.1.js"></script>
 	<script src="assets/scripts/pages/labelCloudData.js"></script>
 	<script src="assets/scripts/pages/labelCloud.js"></script>
 

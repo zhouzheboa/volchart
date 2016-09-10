@@ -1,8 +1,8 @@
  var  teamTimer = 0;
  var labelBodyTimer = 0;
  $(function(){
-      //第一步背景变亮
-      $(".labelCloudBody").addClass("active").show();          
+     
+     $(".labelCloudBody").addClass("active").show();          
       teamTimer = setTimeout(function(){
           	clearTimeout(teamTimer);
           	      //第二步展现团队信息
@@ -16,16 +16,30 @@
                     $("#headPortrait").addClass("active");
                     renderLabelCloudData(1);
                     
-		      },2500)    
+		      },2000)    
 
           },1000)
+
+     $("#labelSelect").change(function(){
+          changeLabelType($(this).val());
+     })
           
 })
+
+function changeLabelType(labelTypeIndex){
+	 $(cloudMap["face"]["id"]).empty();
+     $(cloudMap["leftEar"]["id"]).empty();
+     $(cloudMap["rightEar"]["id"]).empty();
+     $(cloudMap["neck"]["id"]).empty();
+     $(cloudMap["chest"]["id"]).empty();
+      renderLabelCloudData(labelTypeIndex);
+	
+}
 //渲染标签云数据
 function  renderLabelCloudData(selectedVal){
 	   var itemData = labelDataArr[selectedVal];
 	    //面部区域
-        $(cloudMap["face"]["id"]).empty().jQCloud(
+        $(cloudMap["face"]["id"]).jQCloud(
         	joinJsonData(itemData[cloudMap["face"]["key"]]),
 			{
 				rotate: true,
@@ -33,7 +47,7 @@ function  renderLabelCloudData(selectedVal){
 				animateClass: cloudMap["animateClass"]
 		});
 		//左耳朵区域
-		$(cloudMap["leftEar"]["id"]).empty().jQCloud(
+		$(cloudMap["leftEar"]["id"]).jQCloud(
 			itemData[cloudMap["leftEar"]["key"]],
 			{
 				rotate:false,
@@ -41,7 +55,7 @@ function  renderLabelCloudData(selectedVal){
 				animateClass:cloudMap["animateClass"]
 		});
 		//右耳朵区域
-		$(cloudMap["rightEar"]["id"]).empty().jQCloud(
+		$(cloudMap["rightEar"]["id"]).jQCloud(
 			itemData[cloudMap["rightEar"]["key"]],
 			{
 				rotate:false,
@@ -49,7 +63,7 @@ function  renderLabelCloudData(selectedVal){
 				animateClass:cloudMap["animateClass"]
 		});
 		//颈部区域
-		$(cloudMap["neck"]["id"]).empty().jQCloud(
+		$(cloudMap["neck"]["id"]).jQCloud(
 			itemData[cloudMap["neck"]["key"]],
 			{
 				shape: "rectangular",
@@ -59,7 +73,7 @@ function  renderLabelCloudData(selectedVal){
 		});
 		
 		//胸部样式
-		$(cloudMap["chest"]["id"]).empty().jQCloud(
+		$(cloudMap["chest"]["id"]).jQCloud(
 			itemData[cloudMap["chest"]["key"]],
 			{
 				shape: "rectangular",
@@ -71,8 +85,14 @@ function  renderLabelCloudData(selectedVal){
 function joinJsonData(dataArr){
 	var jsonObjArr = [];
 	var dataItem;
+	var fontStyle;
 	for (var i = 0 ,len =dataArr.length; i < len; i++) {
 		 dataItem = dataArr[i];
+		 if(dataItem[1] >= 8){
+             fontStyle = "vertical";
+		 }else{
+             fontStyle = "span_list";
+		 }
 		jsonObjArr.push("{text: '" + dataItem[0] + "', weight: '" + dataItem[1] + "',html: {'class': 'span_list',onmouseover:'on_mouseover(event , \""+dataItem[0]+"\",\""+dataItem[1]+"\",\""+dataItem[2]+"\")',onmouseout:'on_mouseout()'}}");
 	}
 	return eval("[" + jsonObjArr.join(",") + "]");

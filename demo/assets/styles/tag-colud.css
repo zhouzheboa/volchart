@@ -9,7 +9,7 @@
 }
 /* fonts */
 div.jqcloud {
-	font-family: "微软雅黑", "微软雅黑", sans-serif;
+	font-family: "寰蒋闆呴粦", "寰蒋闆呴粦", sans-serif;
 	font-size: 10px;
 	line-height: normal;
 }
@@ -27,7 +27,7 @@ div.jqcloud span.w9 {
 	font-size: 360%;
 	transition: font-size 2s;
 	-moz-transition: font-size 2s; /* Firefox 4 */
-	-webkit-transition: font-size 2s; /* Safari 和 Chrome */
+	-webkit-transition: font-size 2s; /* Safari 鍜� Chrome */
 	-o-transition: font-size 2s; /* Opera */
 }
 
@@ -35,7 +35,7 @@ div.jqcloud span.w8 {
 	font-size: 350%;
 	transition: font-size 2s;
 	-moz-transition: font-size 2s; /* Firefox 4 */
-	-webkit-transition: font-size 2s; /* Safari 和 Chrome */
+	-webkit-transition: font-size 2s; /* Safari 鍜� Chrome */
 	-o-transition: font-size 2s; /* Opera */
 }
 
@@ -43,7 +43,7 @@ div.jqcloud span.w7 {
 	font-size: 240%;
 	transition: font-size 2s;
 	-moz-transition: font-size 2s; /* Firefox 4 */
-	-webkit-transition: font-size 2s; /* Safari 和 Chrome */
+	-webkit-transition: font-size 2s; /* Safari 鍜� Chrome */
 	-o-transition: font-size 2s; /* Opera */
 }
 
@@ -51,7 +51,7 @@ div.jqcloud span.w6 {
 	font-size: 210%;
 	transition: font-size 2s;
 	-moz-transition: font-size 2s; /* Firefox 4 */
-	-webkit-transition: font-size 2s; /* Safari 和 Chrome */
+	-webkit-transition: font-size 2s; /* Safari 鍜� Chrome */
 	-o-transition: font-size 2s; /* Opera */
 }
 
@@ -59,7 +59,7 @@ div.jqcloud span.w5 {
 	font-size: 190%;
 	transition: fontSize 2s;
 	-moz-transition: font-size 2s; /* Firefox 4 */
-	-webkit-transition: font-size 2s; /* Safari 和 Chrome */
+	-webkit-transition: font-size 2s; /* Safari 鍜� Chrome */
 	-o-transition: font-size 2s; /* Opera */
 }
 
@@ -94,7 +94,7 @@ div.jqcloud span:hover {
 	font-weight: bold;
 	transition: font-size 1s;
 	-moz-transition: font-size 1s; /* Firefox 4 */
-	-webkit-transition: font-size 1s ease-in; /* Safari 和 Chrome */
+	-webkit-transition: font-size 1s ease-in; /* Safari 鍜� Chrome */
 	-o-transition: font-size 1s; /* Opera */
 }
 div.jqcloud span.w10 {
@@ -144,7 +144,7 @@ div.jqcloud span.vertical {
 
 /* layout */
 div.jqcloud {
-	overflow: hidden;
+/* 	overflow: hidden; */
 	position: relative;
 }
 
@@ -156,7 +156,7 @@ div.jqcloud span {
 /*     animation:fontSize 1s linear ; */
 	transition: font-size 2s;
 	-moz-transition: font-size 2s; /* Firefox 4 */
-	-webkit-transition: font-size 2s ease-in; /* Safari 和 Chrome */
+	-webkit-transition: font-size 2s ease-in; /* Safari 鍜� Chrome */
 	-o-transition: font-size 2s; /* Opera */
 }
 
