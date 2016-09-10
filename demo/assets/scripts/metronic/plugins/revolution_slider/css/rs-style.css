@@ -60,7 +60,7 @@ version:   	1.0
 
 .fullwidthbanner-container .fullwidthabnner	{
 	width:100% !important;
-	height:960px !important;
+	height:768px !important;
 	position:relative;
 	background: url("../../../../../images/config-bg.png") no-repeat left top; 
     color: #95a3a6 !important;
@@ -74,7 +74,19 @@ version:   	1.0
 }
 .ui-person-box{
 	width: 1000px;
-	height: 800px;
+	height: 768px;
+}
+.fontSizeColor40{
+	font-size: 40px;
+	color: #94d7e4;
+}
+.fontSizeColor18{
+	font-size: 28px;
+	color: #fff;
+}
+.fontSizeColor16{
+	font-size: 18px !important;
+	color: #95a3a6 !important;
 }
 
 
